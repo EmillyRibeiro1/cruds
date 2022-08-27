@@ -1,5 +1,3 @@
-from __future__ import generator_stop
-from socket import NI_NUMERICHOST
 from django.db import models
 
 class cruds(models.Model):
