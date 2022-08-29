@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import cruds
 from .forms import crudsForm
 
@@ -11,6 +11,11 @@ def listar_filmes(request):
 
 def cadastrar(request):
     form = crudsForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('listar_filmes')
+
     context = {
         'form_cruds': form
     }
