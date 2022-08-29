@@ -18,7 +18,7 @@ from django.urls import path
 from core.views import listar_filmes, cadastrar
 
 urlpatterns = [
-    path('cadastrar/', cadastrar, name='cadastrar'),
+    path('cadastro/', cadastrar, name='cadastrar'),
     path('filmes/', listar_filmes, name='listar_filmes'),
     path('admin/', admin.site.urls),
 ]
