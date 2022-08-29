@@ -7,3 +7,6 @@ def listar_filmes(request):
         'cruds': cruds
     }
     return render(request, 'cruds.html', context)
+
+def cadastar(request):
+    return render(request, 'cadastrar.html')
