@@ -4,4 +4,4 @@ from .models import cruds
 class crudsForm(ModelForm):
     class Meta:
         model = cruds
-        fields = ['generos', 'classificação', 'lançamentos']
+        fields = ['nome', 'generos', 'classificação']
