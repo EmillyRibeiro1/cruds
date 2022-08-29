@@ -18,6 +18,6 @@ from django.urls import path
 from core.views import listar_filmes
 
 urlpatterns = [
-    path('filmes', listar_filmes, name='listar_filmes'),
+    path('filmes/', listar_filmes, name='listar_filmes'),
     path('admin/', admin.site.urls),
 ]
