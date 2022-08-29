@@ -2,6 +2,6 @@ from django.forms import ModelForm
 from .models import cruds
 
 class crudsForm(ModelForm):
-    class meta:
+    class Meta:
         model = cruds
-        fields = ['genero', 'classificaçao', 'lançamentos']
+        fields = ['generos', 'classificação', 'lançamentos']
