@@ -10,8 +10,8 @@ def listar_filmes(request):
     return render(request, 'cruds.html', context)
 
 def cadastrar(request):
-    form = crudsForm(request.post or None)
+    form = crudsForm(request.POST or None)
     context = {
-        'form_crud': form
+        'form_cruds': form
     }
     return render(request, 'cadastrar.html', context)
