@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def listar_filmes(request):
+    return render(request, 'cruds.html')
