@@ -65,6 +65,11 @@
     <h1>Filmes</h1>
 
     <p>Gêneros dos Filmes:</p>
+    {% for c1 in projeto %}
+    <p>Gênero: {{cruds.generos}}</p>
+    {% empty %}
+    <p>Não existem filmes cadastrados</p>
+    {% endfor %}
     
 </body>
 </html>
