@@ -13,6 +13,7 @@ def cadastrar(request):
     form = crudsForm(request.POST or None)
 
     if form.is_valid():
+        form.save()
         return redirect('listar_filmes')
 
     context = {
