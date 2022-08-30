@@ -1,22 +1,23 @@
 from django.shortcuts import render, redirect
-from .models import cruds
-from .forms import crudsForm
+from .models import Filmes
+from .forms import FilmesForm
 
-def listar_filmes(request):
-    projeto = cruds.objects.all()
-    context = {
-        'cruds': cruds
+def filmes_listar(request):
+    filmes = Filmes.objects.all()
+    contexto = {
+        'listar_filmes': Filmes
     }
-    return render(request, 'cruds.html', context)
+    return render(request, 'cruds.html', contexto)
 
-def cadastrar(request):
-    form = crudsForm(request.POST or None)
-
+def filmes_cadastro(request):
+    form = FilmesForm(request.POST or None)
     if form.is_valid():
-        form.save()
-        return redirect('listar_filmes')
-
-    context = {
-        'form_cruds': form
+            form.save()
+            return redirect('listar_filmes')
+    contexto = {
+        'form': form
     }
-    return render(request, 'cadastrar.html', context)
+    return render(request, 'cadastrar.html', contexto)
+
+
+

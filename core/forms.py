@@ -1,7 +1,7 @@
 from django.forms import ModelForm
-from .models import cruds
+from .models import Filmes
 
-class crudsForm(ModelForm):
+class FilmesForm(ModelForm):
     class Meta:
-        model = cruds
-        fields = ['nome', 'generos', 'classificação']
+           model = Filmes
+           fields = ['nome', 'generos', 'classificacao']

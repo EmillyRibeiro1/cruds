@@ -1,78 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Cadastro</title>
-    <style type="text/css">
-           .title{
-            background-color: #c7a4c7;
-        }
-        label{
-           background-color: #836c83 ;
-           background-attachment: fixed;
-           background-size: 100%;
-           font-family: Arial;
-           color:white;
-           text-align: center;
-           text-indent: 20px;
-           word-spacing: 2px;
-           font-weight: 800;
-        }
-        body{
-           margin: 0%;
-           word-spacing: 10px;
-           text-align: center;
-           background-color:#b397a8;
-        } 
-        h1, h3,h4{
-           background-color:  #836c83 ;
-           background-attachment: fixed;
-           background-size: 100%;
-           font-family: Arial;
-           color:white;
-           text-align: center;
-           text-indent: 20px;
-           word-spacing: 2px;
-           font-weight: 800;
-           }
-           :checked{
-           background-color: #c7a4c7 ;
-           background-attachment: fixed;
-           background-size: 100%;
-           font-family: Arial;
-           color:white;
-           text-align: center;
-           text-indent: 20px;
-           word-spacing: 2px;
-           font-weight: 800;
-           }
-           p{
-           background-color: #b397a8 ;
-           background-attachment: fixed;
-           background-size: 100%;
-           font-family: Arial;
-           color:white;
-           text-align: center;
-           text-indent: 20px;
-           word-spacing: 2px;
-           font-weight: 800;
-           }     
-       
-         * {
-            font-family: Arial, Helvetica, Sans-serif;
-   ~}
-        </style>
-         </style>
-</head>
-<body>
-    <h1>Filmes</h1>
 
-    <p>Gêneros dos Filmes:</p>
-    {% for c1 in projeto %}
-    <p>Filmes: {{cruds.generos}}</p>
-    {% empty %}
-    <p>Não existem filmes cadastrados</p>
-    {% endfor %}
-    
+<head>
+   <meta charset="UTF-8">
+   <title>Cadastro</title>
+   <style type="text/css">
+      .title {
+         background-color: #c7a4c7;
+      }
+
+      label {
+         background-color: #836c83;
+         background-attachment: fixed;
+         background-size: 100%;
+         font-family: Arial;
+         color: white;
+         text-align: center;
+         text-indent: 20px;
+         word-spacing: 2px;
+         font-weight: 800;
+      }
+
+      body {
+         margin: 0%;
+         word-spacing: 10px;
+         text-align: center;
+         background-color: #b397a8;
+      }
+
+      h1,
+      h3,
+      h4 {
+         background-color: #836c83;
+         background-attachment: fixed;
+         background-size: 100%;
+         font-family: Arial;
+         color: white;
+         text-align: center;
+         text-indent: 20px;
+         word-spacing: 2px;
+         font-weight: 800;
+      }
+
+      :checked {
+         background-color: #c7a4c7;
+         background-attachment: fixed;
+         background-size: 100%;
+         font-family: Arial;
+         color: white;
+         text-align: center;
+         text-indent: 20px;
+         word-spacing: 2px;
+         font-weight: 800;
+      }
+
+      p {
+         background-color: #b397a8;
+         background-attachment: fixed;
+         background-size: 100%;
+         font-family: Arial;
+         color: white;
+         text-align: center;
+         text-indent: 20px;
+         word-spacing: 2px;
+         font-weight: 800;
+      }
+
+      * {
+         font-family: Arial, Helvetica, Sans-serif;
+         
+      }
+   </style>
+   </style>
+</head>
+
+<body>
+   <h1>Filmes</h1>
+
+   <p><a href="{% url 'cadastrar'%}">Cadastrar novo Filme</a></p>
+
+   <p>Filmes:</p>
+   {% for filmes in listar_filmes %}
+   <p>Nome do filme: {{filmes.nome}} Gênero: {{filmes.generos}} Classificação Indicativa: {{c1.classificação}}</p>
+   {% empty %}
+   <p>Não existem filmes cadastrados</p>
+   {% endfor %}
+
 </body>
+
 </html>
