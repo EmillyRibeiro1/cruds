@@ -38,24 +38,6 @@ def remover_filme(request, id):
     filme.delete()
     return redirect('filmes_listar')
 
-def usuario_listar(request):
-    users = Usuario.objects.all()
-    contexto = {
-        'listar_user': users
-    }
-    return render(request, 'filmes_listar.html', contexto)
 
-
-def cadastrar_usuario(request):
-    form = UsuarioForm(request.POST or None)
-
-    if form.is_valid():
-        form.save()
-        return redirect('usuario_listar')
-
-    contexto = {
-        'user': form
-    }
-    return render(request, 'cruds.html', contexto)
 
 
