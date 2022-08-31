@@ -19,5 +19,23 @@ def filmes_cadastro(request):
     }
     return render(request, 'cadastrar.html', contexto)
 
+def editar_filme(request, id):
+    filme = Filmes.objects.get(pk=id)
+
+    form = FilmesForm(request.POST or None, instance=filme)
+
+    if form.is_valid():
+        form.save()
+        return redirect('filmes_listar')
+
+    contexto={
+        'form_filme': form
+    }
+    return render(request, 'cadastrar.html', contexto)
+
+def remover_filme(request, id):
+    filme = Filmes.objects.get(pk=id)
+    filme.delete()
+    return redirect('filmes_listar')
 
 
