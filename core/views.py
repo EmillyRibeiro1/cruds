@@ -43,16 +43,19 @@ def usuario_listar(request):
     contexto = {
         'listar_user': users
     }
-    return render(request, 'cruds.html', contexto)
+    return render(request, 'filmes_listar.html', contexto)
 
-def cadastro_usuario(request):
+
+def cadastrar_usuario(request):
     form = UsuarioForm(request.POST or None)
+
     if form.is_valid():
         form.save()
         return redirect('usuario_listar')
+
     contexto = {
         'user': form
     }
-    return render(request, 'usuario.html', contexto)
+    return render(request, 'cruds.html', contexto)
 
 

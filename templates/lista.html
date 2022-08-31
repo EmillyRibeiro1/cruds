@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista de Usuários</h1>
+
+    <p><a href="{% url 'user' %}">Cadastrar-se</a></p>
+
+    <p>Nome do Usuário: |{{users.nome}}|
+       Idade: |{{users.idade}}|
+       E-mail: |{{users.email}}|
+       | <a href="{% url 'editar_usuario' filmes.id %}">EDITAR</a>
+       | <a href="{% url 'remover_usuario' filmes.id %}">REMOVER</a>
+     </p>
+  
+
+</body>
+</html>

@@ -6,11 +6,10 @@
 </head>
 <body>
     <h1>Cadastro de Usuário</h1>
-
     <form method="POST">
         {% csrf_token %}
-        {{ cadastrar }}
-        <p><input type="submit" value="cadastrar"></p> 
+        {{ user }}
+        <p><input type="submit" value="cadastrar-se"></p>
     </form>
 </body>
 </html>
