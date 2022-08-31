@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Filmes
-from .forms import FilmesForm
+from .models import Filmes, Usuario
+from .forms import FilmesForm, UsuarioForm
 
 def filmes_listar(request):
     filmes = Filmes.objects.all()
@@ -37,5 +37,21 @@ def remover_filme(request, id):
     filme = Filmes.objects.get(pk=id)
     filme.delete()
     return redirect('filmes_listar')
+
+def usuario_listar(request):
+    users = Usuario.objects.all()
+    contexto = {
+        'listar_user': users
+    }
+    return render(request, 'cruds.html', contexto)
+
+def cadastro_usuario(request):
+    form = UsuarioForm(request.post or None)
+    if form.is_valid():
+        form.save()
+    contexto = {
+        'user': form
+    }
+    return redirect('usuario.html', contexto)
 
 

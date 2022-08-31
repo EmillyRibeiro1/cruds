@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Cadastre-se</title>
 </head>
 <body>
     <h1>Cadastro de Usuário</h1>
 
     <form method="post">
         {% csrf_token %}
+        {{ user }}
         <p><input type="submit" value="cadastrar"></p> 
     </form>
 </body>
