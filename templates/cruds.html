@@ -77,11 +77,11 @@
 <body>
    <h1>Filmes</h1>
 
-   <p><a href="{% url 'cadastrar'%}">Cadastrar novo Filme</a></p>
+   <p><a href="{% url 'cadastro'%}">Cadastrar novo Filme</a></p>
 
    <p>Filmes:</p>
-   {% for filmes in listar_filmes %}
-   <p>Nome do filme: {{filmes.nome}} Gênero: {{filmes.generos}} Classificação Indicativa: {{filmes.classificacao}}</p>
+   {% for filmes in listar %}
+   <p>Nome do Filme: {{filmes.nome}} Gênero: {{filmes.generos}} Classificação Indicativa: {{filmes.classificacao}}</p>
    {% empty %}
    <p>Não existem filmes cadastrados</p>
    {% endfor %}
