@@ -23,6 +23,6 @@ urlpatterns = [
     path('filmes/', filmes_listar, name='filmes_listar'),
     path('filme_editar/<int:id>/', editar_filme, name='editar_filme'),
     path('filme_remover/<int:id>/', remover_filme, name='remover_filme'),
-    path('cad_user/', cadastro_usuario, name='cadastro_usuario'),
+    path('cadastrar/', cadastro_usuario, name='cadastro_usuario'),
     path('admin/', admin.site.urls),
 ]

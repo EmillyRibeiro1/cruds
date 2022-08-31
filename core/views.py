@@ -46,12 +46,13 @@ def usuario_listar(request):
     return render(request, 'cruds.html', contexto)
 
 def cadastro_usuario(request):
-    form = UsuarioForm(request.post or None)
+    form = UsuarioForm(request.POST or None)
     if form.is_valid():
         form.save()
+        return redirect('usuario_listar')
     contexto = {
         'user': form
     }
-    return redirect('usuario.html', contexto)
+    return render(request, 'usuario.html', contexto)
 
 

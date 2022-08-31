@@ -7,9 +7,9 @@
 <body>
     <h1>Cadastro de Usuário</h1>
 
-    <form method="post">
+    <form method="POST">
         {% csrf_token %}
-        {{ user }}
+        {{ cadastrar }}
         <p><input type="submit" value="cadastrar"></p> 
     </form>
 </body>

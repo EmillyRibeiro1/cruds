@@ -82,6 +82,9 @@
 
    <p>Filmes:</p>
 
+   {% for users in listar_users %}
+   {% endfor %}
+
    {% for filmes in listar %}
 
    <p>Nome do Filme: {{filmes.nome}} 
@@ -92,7 +95,7 @@
    </p>
 
    <p>
-      
+
    </p>
 
    {% empty %}
