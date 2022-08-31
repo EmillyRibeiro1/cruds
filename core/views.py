@@ -5,7 +5,7 @@ from .forms import FilmesForm
 def filmes_listar(request):
     filmes = Filmes.objects.all()
     contexto = {
-        'listar_filmes': Filmes
+        'filmes_listar': Filmes
     }
     return render(request, 'cruds.html', contexto)
 
@@ -13,7 +13,7 @@ def filmes_cadastro(request):
     form = FilmesForm(request.POST or None)
     if form.is_valid():
             form.save()
-            return redirect('listar_filmes')
+            return redirect('filmes_listar')
     contexto = {
         'form': form
     }

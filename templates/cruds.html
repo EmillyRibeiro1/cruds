@@ -81,7 +81,7 @@
 
    <p>Filmes:</p>
    {% for filmes in listar_filmes %}
-   <p>Nome do filme: {{filmes.nome}} Gênero: {{filmes.generos}} Classificação Indicativa: {{c1.classificação}}</p>
+   <p>Nome do filme: {{filmes.nome}} Gênero: {{filmes.generos}} Classificação Indicativa: {{filmes.classificacao}}</p>
    {% empty %}
    <p>Não existem filmes cadastrados</p>
    {% endfor %}

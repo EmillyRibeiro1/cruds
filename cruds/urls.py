@@ -20,6 +20,6 @@ from core.views import filmes_listar, filmes_cadastro
 
 urlpatterns = [
     path('cadastro/', filmes_cadastro, name='cadastrar'),
-    path('cursos/', filmes_listar, name='cursos_listar'),
+    path('filmes/', filmes_listar, name='filmes_listar'),
 
 ]
