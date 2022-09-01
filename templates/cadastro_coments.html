@@ -6,9 +6,9 @@
 </head>
 <body>
     <h1>Deixe seu comentário sobre os filmes!</h1>
-    <form method="post">
+    <form method="POST">
        {% csrf_token %}
-       {{ listar }} 
+       {{ emi }} 
        <p><input type="submit" value="comentar"></p>
     </form>
 

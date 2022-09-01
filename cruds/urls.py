@@ -15,14 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import filmes_cadastro, filmes_listar, editar_filme, remover_filme, coments, listar_coments
+from core.views import filmes_cadastro, filmes_listar, editar_filme, remover_filme, coment, listar_coments
 
 urlpatterns = [
     path('cadastro/', filmes_cadastro, name='cadastro'),
     path('filmes/', filmes_listar, name='filmes_listar'),
     path('filme_editar/<int:id>/', editar_filme, name='editar_filme'),
     path('filme_remover/<int:id>/', remover_filme, name='remover_filme'),
-    path('comment/', coments, name='coments'),
-    path('comment_listar/', listar_coments, name='listar_coments'),
+    path('coments/', coment, name='coment'),
+    path('coment_listar/', listar_coments, name='listar_coments'),
     path('admin/', admin.site.urls),
 ]

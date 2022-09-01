@@ -7,14 +7,16 @@
 <body>
     <h2>Comentários:</h2>
 
-    {% for form in lista %}
+    {% for list in listando %}
 
     <p>
-        Nome do Filme: {{form.nome}}
-        Comentário: {{form.comentario}}
-        Avaliação: {{form.avaliacao}}
+        Nome do Filme:| {{list.nome}}|
+        Comentário Sobre o Filme:| {{lisr.comentario}}|
+        Avaliação:| {{list.avaliacao}}|
     </p>
 
-    <p><a href="{% url 'comment' %}">COMENTAR</a></p>
+    {% endfor %}
+
+    <p><a href="{% url 'coment' %}">COMENTAR</a></p>
 </body>
 </html>

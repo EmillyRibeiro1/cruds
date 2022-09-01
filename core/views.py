@@ -38,22 +38,23 @@ def remover_filme(request, id):
     filme.delete()
     return redirect('filmes_listar')
 
-def coments(request):
+def listar_coments(request):
+    list = Comentario.objects.all()
+    contexto = {
+        'listando': list
+    }
+    return render(request, 'lista_coments.html', contexto)
+
+
+def coment(request):
     form = ComentarioForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('')
+        return redirect('listar_coments')
     contexto = {
         'emi': form
     }
-    return render(request, '', contexto)
-
-def listar_coments(request):
-    lista = Comentario.objects.all()
-    contexto = {
-        'listar': lista
-    }
-    return render(request, 'coments.html', contexto)
+    return render(request, 'cadastro_coments.html', contexto)
 
 
 
