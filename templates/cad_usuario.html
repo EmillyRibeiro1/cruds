@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu CineLovers</title>
+    <link rel="shortcut icon" type="" href="">
+    <link rel="icon" type="" href="">
+</head>
+<body>
+    <i class="fa-regular fa-user"></i>
+    <h2>Cadastre-se</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form_filme }}
+        <p><input type="submit" value="cadastrar"></p>
+    </form>
+</body>
+</html>
