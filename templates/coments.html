@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comentários e Avaliações</title>
+</head>
+<body>
+    <h1>Deixe seu comentário sobre os filmes!</h1>
+    <form method="post">
+       {% csrf_token %}
+       {{ listar }} 
+       <p><input type="submit" value="comentar"></p>
+    </form>
+
+</body>
+</html>

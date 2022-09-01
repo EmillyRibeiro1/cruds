@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Filmes, Usuario
-from .forms import FilmesForm, UsuarioForm
+from .models import Filmes, Comentario
+from .forms import FilmesForm, ComentarioForm 
 
 def filmes_listar(request):
     filmes = Filmes.objects.all()
@@ -37,6 +37,23 @@ def remover_filme(request, id):
     filme = Filmes.objects.get(pk=id)
     filme.delete()
     return redirect('filmes_listar')
+
+def coments(request):
+    form = ComentarioForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('')
+    contexto = {
+        'emi': form
+    }
+    return render(request, '', contexto)
+
+def listar_coments(request):
+    lista = Comentario.objects.all()
+    contexto = {
+        'listar': lista
+    }
+    return render(request, 'coments.html', contexto)
 
 
 

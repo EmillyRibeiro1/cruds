@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Comentários</title>
+</head>
+<body>
+    <h2>Comentários:</h2>
+
+    {% for form in lista %}
+
+    <p>
+        Nome do Filme: {{form.nome}}
+        Comentário: {{form.comentario}}
+        Avaliação: {{form.avaliacao}}
+    </p>
+
+    <p><a href="{% url 'comment' %}">COMENTAR</a></p>
+</body>
+</html>
