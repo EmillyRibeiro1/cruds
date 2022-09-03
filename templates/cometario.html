@@ -1,0 +1,51 @@
+<!doctype html>
+{% load static %}
+{% load widget_tweaks %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Comentário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'estilo.css' %}">
+</head>
+  <body>
+        <div class="row m-5 text-center">
+      <h1>Comentários</h1>
+      <p><a href="{% url 'home'%}">Voltar a página Inicial</a></p>
+    </div>
+    
+    <div class="row m-5">
+      <p><a href="{% url 'cometario_cadastro'%}">Cadastrar novo comentário</a></p>
+      <p>Lista de comentários Cadastrados</p>
+
+      {% for cometario in lista_comentario %}
+      <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col-2">Comentário</th>
+          <th scope="col-2">Filme</th>
+          <th scope="col-2">Avaliação</th>
+          <th scope="col-3">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{cometario.comet}}</td>
+          <td>{{cometario.nomeFil}}</td>
+          <td>{{cometario.avaliacao}}</td>
+          <td><a href="{% url 'cometario_editar' cometario.id %}">EDITAR</a>
+              <a href="{% url 'cometario_remover' cometario.id %}">DELETAR</a></p>
+        </tr>
+      </tbody>
+      </table>
+    
+    {% empty %}
+    <p>Nenhum comentário cadastrado</p>
+    {% endfor %}
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>

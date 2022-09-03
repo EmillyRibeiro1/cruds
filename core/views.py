@@ -1,61 +1,122 @@
 from django.shortcuts import render, redirect
-from .models import Filmes, Comentario
-from .forms import FilmesForm, ComentarioForm 
+from .models import Filmes, Usuario, Comentarios
+from .forms import FilmesForm, UsuarioForm, ComentariosForm
 
-def filmes_listar(request):
+# Create your views here.
+
+
+def home(request):
+    return render(request, 'index.html')
+
+#filme
+def filme_listar(request):
     filmes = Filmes.objects.all()
     contexto = {
-        'listar': filmes
+        'lista_filmes': filmes
     }
-    return render(request, 'cruds.html', contexto)
+    return render(request, 'filme.html',contexto)
 
-def filmes_cadastro(request):
-    form = FilmesForm(request.POST or None)
+def filme_cadastrar(request):
+    form = FilmesForm(request.POST or None, request.FILES or None)
     if form.is_valid():
-        form.save()
-        return redirect('filmes_listar')
+            form.save()
+            return redirect('filmes_listar')
     contexto = {
-        'form_filme': form
+        'form': form
     }
-    return render(request, 'cadastrar.html', contexto)
+    return render(request, 'filme_add.html',contexto)
 
-def editar_filme(request, id):
+def filme_editar(request,id):
     filme = Filmes.objects.get(pk=id)
-
+    
     form = FilmesForm(request.POST or None, instance=filme)
-
     if form.is_valid():
         form.save()
         return redirect('filmes_listar')
-
-    contexto={
-        'form_filme': form
+    
+    contexto = {
+        'form': form
     }
-    return render(request, 'cadastrar.html', contexto)
+    return render(request, 'filme_add.html',contexto)
 
-def remover_filme(request, id):
+def filme_remover(request,id):
     filme = Filmes.objects.get(pk=id)
     filme.delete()
     return redirect('filmes_listar')
 
-def listar_coments(request):
-    list = Comentario.objects.all()
+
+#Usuario
+def usuario_listar(request):
+    usuarios = Usuario.objects.all()
     contexto = {
-        'listando': list
+        'lista_usuario': usuarios
     }
-    return render(request, 'lista_coments.html', contexto)
+    return render(request, 'usuario.html',contexto)
 
-
-def coment(request):
-    form = ComentarioForm(request.POST or None)
+def usuario_cadastrar(request):
+    form = UsuarioForm(request.POST or None)
     if form.is_valid():
         form.save()
-        return redirect('listar_coments')
+        return redirect('usuario_listar')
     contexto = {
-        'emi': form
+        'form': form
     }
-    return render(request, 'cadastro_coments.html', contexto)
+    return render(request, 'usuario_add.html',contexto)
+
+def usuario_editar(request,id):
+    usuarios = Usuario.objects.get(pk=id)
+    
+    form = UsuarioForm(request.POST or None, instance=usuarios)
+    if form.is_valid():
+        form.save()
+        return redirect('usuario_listar')
+    
+    contexto = {
+        'form': form
+    }
+    return render(request, 'usuario_add.html',contexto)
+
+def usuario_remover(request,id):
+    usuarios = Usuario.objects.get(pk=id)
+    usuarios.delete()
+    return redirect('usuario_listar')
 
 
 
 
+
+#comentario
+def comentario_listar(request):
+    comentario = Comentarios.objects.all()
+    contexto = {
+        'lista_comentario': comentario
+    }
+    return render(request, 'cometario.html',contexto)
+
+def comentario_cadastrar(request):
+    form = ComentariosForm(request.POST or None)
+    if form.is_valid():
+            form.save()
+            return redirect('cometario_listar')
+    contexto = {
+        'form': form
+    }
+    return render(request, 'cometario_add.html',contexto)
+
+def comentario_editar(request,id):
+    comentario = Comentarios.objects.get(pk=id)
+    
+    form = ComentariosForm(request.POST or None, instance=comentario)
+    if form.is_valid():
+        form.save()
+        return redirect('cometario_listar')
+    
+    contexto = {
+        'form': form
+    }
+    return render(request, 'cometario_add.html',contexto)
+
+def comentario_remover(request,id):
+    comentario = Comentarios.objects.get(pk=id)
+    comentario.delete()
+    return redirect('cometario_listar')

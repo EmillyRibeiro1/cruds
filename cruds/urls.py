@@ -15,14 +15,27 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import filmes_cadastro, filmes_listar, editar_filme, remover_filme, coment, listar_coments
-
+from django.conf import settings
+from django.conf.urls.static import static
+from core.views import filme_cadastrar,filme_editar,filme_listar,filme_remover,home
+from core.views import comentario_cadastrar,comentario_editar,comentario_listar,comentario_remover
+from core.views import usuario_cadastrar,usuario_editar,usuario_listar,usuario_remover
 urlpatterns = [
-    path('cadastro/', filmes_cadastro, name='cadastro'),
-    path('filmes/', filmes_listar, name='filmes_listar'),
-    path('filme_editar/<int:id>/', editar_filme, name='editar_filme'),
-    path('filme_remover/<int:id>/', remover_filme, name='remover_filme'),
-    path('coments/', coment, name='coment'),
-    path('coment_listar/', listar_coments, name='listar_coments'),
     path('admin/', admin.site.urls),
-]
+    path('', home, name= 'home'),
+
+    path('filmes/', filme_listar, name='filmes_listar'),
+    path('filmes_cadastro/', filme_cadastrar, name='filmes_cadastro'),
+    path('filmes_editar/<int:id>/', filme_editar, name='filmes_editar'),
+    path('filmes_remover/<int:id>/', filme_remover, name='filmes_remover'),
+
+    path('cometario_listar/', comentario_listar, name='cometario_listar'),
+    path('cometario_cadastro/', comentario_cadastrar, name='cometario_cadastro'),
+    path('cometario_editar/<int:id>/', comentario_editar, name='cometario_editar'),
+    path('cometario_remover/<int:id>/', comentario_remover, name='cometario_remover'),
+
+    path('usuario_listar/', usuario_listar, name='usuario_listar'),
+    path('usuario_cadastro/', usuario_cadastrar, name='usuario_cadastro'),
+    path('usuario_editar/<int:id>/', usuario_editar, name='usuario_editar'),
+    path('usuario_remover/<int:id>/', usuario_remover, name='usuario_remover'),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

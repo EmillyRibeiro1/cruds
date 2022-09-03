@@ -1,0 +1,52 @@
+<!doctype html>
+{% load static %}
+{% load widget_tweaks %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Usuário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'estilo.css' %}">
+</head>
+  <body>
+    <div class="row m-5 text-center">
+      <h1>Usuarios</h1>
+      <p><a href="{% url 'home'%}">Voltar a Página Inicial</a></p>
+    </div>
+    
+    <div class="row m-5">
+      <p><a href="{% url 'usuario_cadastro'%}">Cadastrar Novo Usuário</a></p>
+      <p>Lista de usuarios Cadastrados</p>
+
+      {% for usuario in usuario_listar %}
+      <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col-2">Nome</th>
+          <th scope="col-2">Sobrenome</th>
+          <th scope="col-2">Idade</th>
+          <th scope="col-2">Email</th>
+          <th scope="col-3">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{usuario.nome}}</td>
+          <td>{{usuario.sobrenome}}</td>
+          <td>{{usuario.idade}}</td>
+          <td>{{usuario.email}}</td>
+          <td><a href="{% url 'usuario_editar' usuario.id %}">EDITAR</a>
+              <a href="{% url 'usuario_remover' usuario.id %}">DELETAR</a></td>
+        </tr>
+      </tbody>
+      </table>
+    
+    {% empty %}
+    <p>Nenhum usuario cadastrado</p>
+    {% endfor %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,12 +1,17 @@
+from .models import Usuario, Filmes, Comentarios
 from django.forms import ModelForm
-from .models import Filmes, Comentario
+
+class UsuarioForm(ModelForm):
+    class Meta():
+        model = Usuario
+        fields = ['nome', 'sobrenome', 'idade', 'email']
 
 class FilmesForm(ModelForm):
-    class Meta:
+    class Meta():
         model = Filmes
-        fields = ['nome', 'generos', 'classificacao']
+        fields = ['nome', 'genero', 'classificacao', 'foto']
 
-class ComentarioForm(ModelForm):
-    class Meta:
-        model = Comentario
-        fields = ['nome', 'comentario', 'avaliacao']
+class ComentariosForm(ModelForm):
+    class Meta():
+        model = Comentarios
+        fields = ['comet', 'nomeFil', 'avaliacao']
