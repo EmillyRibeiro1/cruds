@@ -4,11 +4,11 @@ from django.db import models
 class Filmes(models.Model):
     nome = models.CharField('Nome do Filme', max_length=100)
     genero = models.CharField('Gênero', max_length=100)
-    classificacao = models.IntegerField('Classificação')
+    classificacao = models.CharField('Classificação', max_length=10)
     foto = models.ImageField('Foto', upload_to='filmes', null=True)
 
 class Usuario(models.Model):
-    nome = models.CharField('Nome', max_length=100)
+    nome = models.CharField('Nome e Sobrenome', max_length=100)
     idade = models.IntegerField('Idade')
     email = models.EmailField(max_length=254)
 
