@@ -9,7 +9,6 @@ class Filmes(models.Model):
 
 class Usuario(models.Model):
     nome = models.CharField('Nome', max_length=100)
-    sobrenome = models.CharField('Sobrenome', max_length=100)
     idade = models.IntegerField('Idade')
     email = models.EmailField(max_length=254)
 

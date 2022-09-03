@@ -11,13 +11,13 @@
 </head>
   <body>
     <div class="row m-5 text-center">
-      <h1>Usuarios</h1>
+      <h1>Usuários</h1>
       <p><a href="{% url 'home'%}">Voltar a Página Inicial</a></p>
     </div>
     
     <div class="row m-5">
       <p><a href="{% url 'usuario_cadastro'%}">Cadastrar Novo Usuário</a></p>
-      <p>Lista de usuarios Cadastrados</p>
+      <p>Lista de Usuários Cadastrados</p>
 
       {% for usuario in usuario_listar %}
       <table class="table table-striped">
@@ -33,7 +33,6 @@
       <tbody>
         <tr>
           <td>{{usuario.nome}}</td>
-          <td>{{usuario.sobrenome}}</td>
           <td>{{usuario.idade}}</td>
           <td>{{usuario.email}}</td>
           <td><a href="{% url 'usuario_editar' usuario.id %}">EDITAR</a>
@@ -43,7 +42,7 @@
       </table>
     
     {% empty %}
-    <p>Nenhum usuario cadastrado</p>
+    <p>Nenhum usuário cadastrado</p>
     {% endfor %}
     </div>
 

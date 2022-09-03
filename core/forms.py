@@ -4,7 +4,7 @@ from django.forms import ModelForm
 class UsuarioForm(ModelForm):
     class Meta():
         model = Usuario
-        fields = ['nome', 'sobrenome', 'idade', 'email']
+        fields = ['nome', 'idade', 'email']
 
 class FilmesForm(ModelForm):
     class Meta():

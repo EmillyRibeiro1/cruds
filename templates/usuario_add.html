@@ -19,7 +19,6 @@
       <form method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <p>{{form.nome.label}}: {{form.nome}}</p>
-        <p>{{form.sobrenome.label}}: {{form.sobrenome}}</p>
         <p>{{form.email.label}}: {{form.email}}</p>
         <p>{{form.idade.label}}: {{form.idade}}</p>
         <button type="submit">Salvar</button>
