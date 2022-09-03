@@ -8,12 +8,14 @@ body {
     margin-top: 2%;
     justify-content: center;
 }
+
 .card{
     background-image: url("blossom.gif");
     background-color: #8f77c5 ;
     color:#8f77c5;
     text-align: center;
 }
+
 p{
     background-color: #b397a8;
     background-attachment: fixed;
@@ -26,14 +28,19 @@ p{
     font-weight: 800;
     }     
 
-    h1, h3,h4{
-        background-color:  #836c83 ;
-        background-attachment: fixed;
-        background-size: 100%;
-        font-family: Arial;
-        color:white;
-        text-align: center;
-        text-indent: 20px;
-        word-spacing: 2px;
-        font-weight: 800;
-        }
+h1, h3,h4{
+    background-color:  #836c83 ;
+    background-attachment: fixed;
+    background-size: 100%;
+    font-family: Arial;
+    color:white;
+    text-align: center;
+    text-indent: 20px;
+    word-spacing: 2px;
+    font-weight: 800;
+    }
+
+h2{
+    background-color: rgb(238, 44, 44);
+    color: antiquewhite;
+}
