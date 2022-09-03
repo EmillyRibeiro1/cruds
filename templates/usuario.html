@@ -19,12 +19,11 @@
       <p><a href="{% url 'usuario_cadastro'%}">Cadastrar Novo Usuário</a></p>
       <p>Lista de Usuários Cadastrados</p>
 
-      {% for usuario in usuario_listar %}
+      {% for usuario in lista_usuario %}
       <table class="table table-striped">
       <thead>
         <tr>
           <th scope="col-2">Nome</th>
-          <th scope="col-2">Sobrenome</th>
           <th scope="col-2">Idade</th>
           <th scope="col-2">Email</th>
           <th scope="col-3">Ações</th>
