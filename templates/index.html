@@ -11,20 +11,7 @@
 </head>
   <body>
     <div class="row m-5">
-      <h1 class="text-center">Página Inicial</h1>
-    </div>
-
-    <div class="row m-5">
-      <h1 class="sinopse">Sinopse do Site</h1>
-    </div>
-    <div class="row m-5">
-      <div class="col-12">
-          <div class="card-body">
-            <p class="car">O site CineLovers tem o objetivo de reunir suegestões e opiniões
-              de pessoas que assim como nós gostam de assistir Filmes.
-            </p>
-          </div>
-      </div>
+      <h1 class="pagina">Página Inicial</h1>
     </div>
 
     <div class="row m-5">
@@ -55,7 +42,7 @@
           <div class="card" >
             <div class="card-body">
               <h5 class="card-title">Usuários</h5>
-              <p class="card-text">Cadastre-se Aqui.</p>
+              <p class="card-text">Lista de Usuários do Site.</p>
               <a href="{% url 'usuario_listar' %}" class="btn btn-primary">Vamos lá!</a>
             </div>
           </div>
@@ -63,25 +50,38 @@
       </div>
 
       <div class="row m-5">
-      <h1 class="text-center">Colaboradoras</h1>
+        <h1 class="text-center">Sinopse do Site</h1>
+      </div>
+      <div class="row m-5">
+        <div class="col-12">
+            <div class="card-body">
+              <p class="car">O site CineLovers tem o objetivo de reunir sugestões e opiniões
+                de pessoas que assim como nós gostam de assistir Filmes.
+              </p>
+            </div>
+        </div>
+      </div>
+
+      <div class="row m-5">
+      <h1 class="text-center">Desenvolvedoras</h1>
     </div>
     
     <div class="row m-5"> 
       <div class="col-6">
-        <div class="card" >
+        <div class="card2" >
           <div class="card-body">
-            <h5 class="card-title">Colaboradora</h5>
-            <p class="card-text">Emilly Ribeiro</p>
-            <p><img src="EmillyRibeiro.jpeg" alt="" width="500" height="400"> </p>
+            <p class="card-nome">Emilly Ribeiro</p>
+            <p><img class="imagem" src="{% static 'EmillyRibeiro.jpeg' %}"
+               alt="Foto de Emilly Ribeiro" style="border:black 5px;" width="400" height="400" />
+            </p>
           </div>
         </div>
       </div>
       <div class="col-6">
-        <div class="card" >
+        <div class="card2" >
           <div class="card-body">
-            <h5 class="card-title">Colaboradora</h5>
-            <p class="card-text">Ana Júlia de Brito</p>
-            <p><img src="AnaJulia.jpeg" alt="" width="500" height="400"> </p>
+            <p class="card-nome">Ana Júlia de Brito</p>
+            <p><img src="{% static 'AnaJulia.jpeg' %}" alt="Foto de Ana Júlia de Brito" width="300" height="400" /></p>
           </div>
         </div>
       </div>

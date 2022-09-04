@@ -12,15 +12,15 @@
   <body>
     <div class="row m-5 text-center">
       <h1>Usuários</h1>
-      <p><a href="{% url 'home'%}">Voltar a Página Inicial</a></p>
+      <p class="cadastrar"><a href="{% url 'home'%}">Voltar a Página Inicial</a></p>
     </div>
     
     <div class="row m-5">
-      <p><a href="{% url 'usuario_cadastro'%}">Cadastrar Novo Usuário</a></p>
-      <p>Lista de Usuários Cadastrados</p>
+      <p class="cadastrar"><a href="{% url 'usuario_cadastro'%}">Cadastrar Novo Usuário</a></p>
+      <p class="lista">Lista de Usuários Cadastrados</p>
 
       {% for usuario in lista_usuario %}
-      <table class="table table-striped">
+      <table class="table">
       <thead>
         <tr>
           <th scope="col-2">Nome e Sobrenome</th>
@@ -30,7 +30,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr class="palavras">
           <td>{{usuario.nome}}</td>
           <td>{{usuario.idade}}</td>
           <td>{{usuario.email}}</td>

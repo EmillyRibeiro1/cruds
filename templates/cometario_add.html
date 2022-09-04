@@ -12,11 +12,11 @@
   <body>
     <div class="row m-5 text-center ">
       <h1>Cadastro de Comentário</h1>
-      <p><a href="{% url 'home'%}">Voltar a pagina Inicial</a></p>
+      <p class="cadastrar"><a href="{% url 'home'%}">Voltar a pagina Inicial</a></p>
     </div>
     
     <div class="row m-3 text-center">
-      <form method="post" enctype="multipart/form-data">
+      <form class="form" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <p>{{form.comet.label}}: {{form.comet}}</p>
         <p>{{form.nomeFil.label}}: {{form.nomeFil}}</p>

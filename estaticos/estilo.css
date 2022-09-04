@@ -1,16 +1,25 @@
 body {
+    background-image: url("total.webp");
+    background-repeat: repeat;
     font-family:sans-serif;
     font-size: 1em;
-    color: #594259;
     margin-top: 2%;
     justify-content: center;
 }
 
+.pagina{
+    background-color: aqua;
+    color: black;
+}
+
 .card{
-    background-color: #8f77c5 ;
+    background-color: #f3721c ;
     color: whitesmoke;
-    text-align: center;
-    
+    text-align: center;   
+}
+
+.card2{
+    background-color: black;
 }
 .text{
     background-color: black;
@@ -21,6 +30,8 @@ body {
     color: white;
 }
 .card-text{
+    font-size: 30px;
+    font-style: oblique;
     color: rgb(34, 184, 230);
     background-color: black;
 }
@@ -33,7 +44,7 @@ body {
     text-indent: 20px;
     word-spacing: 2px;
     font-weight: 800;
-    color:#644b9c;
+    color:white;
 }
 
 p{
@@ -45,9 +56,7 @@ p{
     text-indent: 20px;
     word-spacing: 2px;
     font-weight: 800;
-    color:#644b9c;
-
-    }     
+}     
 
 h1, h3,h4{
     background-color:  #c52ac5 ;
@@ -58,17 +67,41 @@ h1, h3,h4{
     text-align: center;
     text-indent: 20px;
     word-spacing: 2px;
+    font-size: 40px;
 }
-
+.table{
+    background-color:white;
+}
+.form{
+    background-color: white;
+    color: black;
+    padding-top: 10px;
+}
+.cadastrar{
+    font-size: 20px;
+}
+.palavras{
+    font-weight: 800;
+    font-style: oblique;
+}
+.lista{
+    background-color: aquamarine;
+    color: black;
+    font-size: 25px;
+}
+.card-nome{
+    background-color: white;
+    font-size: 30px;
+    font-style: oblique;
+    color: rgb(245, 69, 38);
+}
 .card-title{
     font-family: Verdana;
     font-size: 30px;
     text-indent: 20px;
     word-spacing: 2px;
     text-align: center;
-    color:#644b9c;
-
-
+    color:#fff129;
 }
 
 h2{
@@ -77,19 +110,20 @@ h2{
 }
 
 h1, h3,h4{
-background-color:  rgb(235, 33, 33)  ;
-background-attachment: fixed;
-background-size: 100%;
-font-family: Arial;
-color:white;
-text-align: center;
-text-indent: 20px;
-word-spacing: 2px;
-font-weight: 800;
-}
- .car{
-    background-color:#8b7aad ;
+    background-color:  rgb(235, 33, 33)  ;
+    background-attachment: fixed;
+    background-size: 100%;
+    font-family: Arial;
     color:white;
+    text-align: center;
+    text-indent: 20px;
+    word-spacing: 2px;
+    font-weight: 800;
+}
+.car{
+    font-size: 35px;
+    background-color:white ;
+    color:rgb(8, 7, 7);
     font-family: Arial;
     text-align: center;
     font-weight: 800;

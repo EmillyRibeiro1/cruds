@@ -12,29 +12,29 @@
   <body>
     <div class="row m-5 text-center">
       <h1>Filmes</h1>
-      <p><a href="{% url 'home'%}">Voltar a pagina Inicial</a></p>
+      <p class="cadastrar"><a href="{% url 'home'%}">Voltar a pagina Inicial</a></p>
     </div>
     
     <div class="row m-5">
-      <p><a href="{% url 'filmes_cadastro'%}">Cadastrar novo Filme</a></p>
-      <p>Lista de Filmes Cadastrados</p>
+      <p class="cadastrar"><a href="{% url 'filmes_cadastro'%}">Cadastrar novo Filme</a></p>
+      <p class="lista">Lista de Filmes Cadastrados</p>
     {% for filme in lista_filmes %}
-  <table class="table table-striped">
+  <table class="table">
   <thead>
     <tr>
       <th scope="col-2">Nome</th>
-      <th scope="col-2">Genero</th>
+      <th scope="col-2">Gênero</th>
       <th scope="col-2">Classificação</th>
       <th scope="col-3">Foto</th>
       <th scope="col-3">Ações</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr class="palavras">
       <td>{{filme.nome}}</td>
       <td>{{filme.genero}}</td>
       <td>{{filme.classificacao}}</td>
-      <td><img src="/media/{{filme.foto}}" alt="" width="50px" height="50px"/></td>
+      <td><img src="/media/{{filme.foto}}" alt="" width="60px" height="60px"/></td>
       <td><a href="{% url 'filmes_editar' filme.id %}">EDITAR</a>
           <a href="{% url 'filmes_remover' filme.id %}">DELETAR</a></td>
     </tr>
