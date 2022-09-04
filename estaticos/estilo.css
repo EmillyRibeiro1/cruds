@@ -9,12 +9,6 @@ body {
     justify-content: center;
 }
 
-.card{
-    background-color: #8f77c5 ;
-    color: whitesmoke;
-    text-align: center;
-    
-}
 .card-text{
     color: rgb(34, 184, 230);
 }
@@ -50,12 +44,12 @@ h1, h3,h4{
 }
 
 h2{
-    background-color: rgb(238, 44, 44);
+    background-color: rgb(189, 14, 14);
     color: antiquewhite;
 }
 
 h1, h3,h4{
-background-color:  #8f77c5 ;
+background-color:  rgb(235, 33, 33)  ;
 background-attachment: fixed;
 background-size: 100%;
 font-family: Arial;
@@ -65,9 +59,10 @@ text-indent: 20px;
 word-spacing: 2px;
 font-weight: 800;
 }
-
-.car{
-    background-color: rgb(100, 23, 172);
-    color: white;
+ .car{
+    background-color: rgb(39, 179, 204);
+    color: black;
     font-family: Arial;
+    text-align: center;
+    font-weight: 800;
 }
