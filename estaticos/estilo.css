@@ -13,6 +13,17 @@ body {
     color: rgb(34, 184, 230);
 }
 
+.colaboradoras{
+    background-attachment: fixed;
+    background-size: 100%;
+    font-family: Arial;
+    text-align: center;
+    text-indent: 20px;
+    word-spacing: 2px;
+    font-weight: 800;
+    color:#644b9c;
+}
+
 p{
     background-color: black;
     background-attachment: fixed;
@@ -41,6 +52,12 @@ h1, h3,h4{
 .card-title{
     font-family: Verdana;
     font-size: 30px;
+    text-indent: 20px;
+    word-spacing: 2px;
+    text-align: center;
+    color:#644b9c;
+
+
 }
 
 h2{
@@ -60,9 +77,11 @@ word-spacing: 2px;
 font-weight: 800;
 }
  .car{
-    background-color: rgb(39, 179, 204);
-    color: black;
+    background-color:#8b7aad ;
+    color:white;
     font-family: Arial;
     text-align: center;
     font-weight: 800;
 }
+
+
