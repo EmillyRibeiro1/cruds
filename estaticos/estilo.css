@@ -1,7 +1,4 @@
 body {
-    background-image: url("total.webp");
-    background-attachment: fixed;
-    background-repeat: repeat;
     font-family:sans-serif;
     font-size: 1em;
     color: #594259;
@@ -15,12 +12,21 @@ body {
     text-align: center;
     
 }
+.text{
+    background-color: black;
+    color: white;
+}
+.text-center, h2{
+    background-color: #c52ac5;
+    color: white;
+}
 .card-text{
     color: rgb(34, 184, 230);
+    background-color: black;
 }
 
 p{
-    background-color: black;
+    background-color: white;
     background-attachment: fixed;
     background-size: 100%;
     font-family: Arial;
@@ -33,25 +39,19 @@ p{
     }     
 
 h1, h3,h4{
-    background-color:  #836c83 ;
+    background-color:  #c52ac5 ;
     background-attachment: fixed;
-    background-size: 100%;
+    background-size: 90%;
     font-family: Arial;
     color:white;
     text-align: center;
     text-indent: 20px;
     word-spacing: 2px;
-    font-weight: 800;
-    }
+}
 
 .card-title{
     font-family: Verdana;
     font-size: 30px;
-}
-
-h2{
-    background-color: rgb(238, 44, 44);
-    color: antiquewhite;
 }
 
 h1, h3,h4{
@@ -70,4 +70,5 @@ font-weight: 800;
     background-color: rgb(100, 23, 172);
     color: white;
     font-family: Arial;
+    text-align: center;
 }
